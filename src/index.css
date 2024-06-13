@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("./assets/fonts/Mona-Sans.woff2") format("woff2");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+@layer utilities {
+  .stretch-75 {
+    font-stretch: 75%;
+  }
+  .stretch-90 {
+    font-stretch: 90%;
+  }
+  .stretch-110 {
+    font-stretch: 110%;
+  }
+  .stretch-125 {
+    font-stretch: 125%;
+  }
+}
+
+:root {
+  font-family: Mona Sans, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
