@@ -29,11 +29,11 @@ function App() {
   console.log("items: ", items)
 
   return (
-    <main className='container mx-auto p-10'>
+    <main className='container mx-auto p-4 lg:p-10'>
       <div className='flex flex-col lg:flex-row gap-2 items-center mb-4'>
         <section className='basis-full flex flex-col'>
           <h1 className='font-bold text-4xl stretch-125'>
-            talk2human fast
+            talk2human
           </h1>
           <p className='text-md break-all'>
             easily reach real customer service agents and save time.
