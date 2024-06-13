@@ -5,6 +5,8 @@ import { TbArrowNarrowRight } from "react-icons/tb"
 
 export const Card = (props) => {
   const { data } = props
+
+  const [isHovered, setIsHovered] = useState(false)
   const [gradientPosition, setGradientPosition] = useState({
     x: 50,
     y: 50,
@@ -18,6 +20,8 @@ export const Card = (props) => {
     const y = ((e.clientY - top) / height) * 100
     setGradientPosition({ x, y })
   }
+  const handleMouseEnter = () => setIsHovered(true)
+  const handleMouseLeave = () => setIsHovered(false)
 
   return (
     <section
@@ -26,11 +30,15 @@ export const Card = (props) => {
       flex-col shadow-lg rounded-lg bg-slate-800 text-slate-50 font-medium
       overflow-hidden border border-slate-500`}
       onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div
         className='absolute inset-0 bg-gradient-to-r from-transparent to-transparent transition-opacity duration-500'
         style={{
-          backgroundImage: `radial-gradient(circle at ${gradientPosition.x}% ${gradientPosition.y}%, #0F172A, #334155)`,
+          backgroundImage: isHovered
+            ? `radial-gradient(circle at ${gradientPosition.x}% ${gradientPosition.y}%, #0F172A, #334155)`
+            : "none",
         }}
       ></div>
       <div className='relative'>
