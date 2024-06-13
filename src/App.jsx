@@ -1,5 +1,4 @@
 import { useState } from "react"
-import "./App.css"
 import { CardContainer } from "./components/CardContainer"
 import { SearchContainer } from "./components/SearchContainer"
 import { data } from "./data/data"
