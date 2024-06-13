@@ -5,7 +5,7 @@ import { TbArrowNarrowRight } from "react-icons/tb"
 export const Card = (props) => {
   const { data } = props
   return (
-    <section className='p-4 flex flex-col shadow-lg rounded-lg bg-slate-800 text-slate-50 font-medium'>
+    <section className='transition ease-in-out delay-10 hover:-translate-y-0.5 hover:scale-102 hover:bg-hover-gradient duration-500 p-4 flex flex-col shadow-lg rounded-lg bg-slate-800 text-slate-50 font-medium'>
       <div className='flex items-center'>
         <img
           className='w-12 h-12 rounded-lg mr-2 bg-stone-50'
@@ -20,7 +20,7 @@ export const Card = (props) => {
         <BiPhone style={{ display: "inline" }} />
         <a
           href={`tel:${data.phone_primary}`}
-          className='pl-2 font-mono text-slate-200'
+          className='pl-2 font-mono text-slate-200 hover:underline'
         >
           {data.phone_primary}
         </a>
@@ -29,9 +29,9 @@ export const Card = (props) => {
         <BiPhone style={{ display: "inline" }} />
         <a
           href={`tel:${data.phone_secondary}`}
-          className='pl-2 font-mono font-medium text-slate-200'
+          className='pl-2 font-mono font-medium text-slate-200 hover:underline'
         >
-          {data.phone_secondary}
+          {data.phone_secondary ? data.phone_secondary : "n/a"}
         </a>
       </div>
 

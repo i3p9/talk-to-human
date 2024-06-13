@@ -4,7 +4,7 @@ import { SearchContainer } from "./components/SearchContainer"
 import { data } from "./data/data"
 import { useEffect } from "react"
 import Fuse from "fuse.js"
-import { Footer } from "./components/Footer"
+// import { Footer } from "./components/Footer"
 import { Header } from "./components/Header"
 
 function App() {
