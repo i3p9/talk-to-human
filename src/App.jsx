@@ -27,8 +27,6 @@ function App() {
     //eslint-disable-next-line
   }, [searchTerm])
 
-  console.log("items: ", items)
-
   return (
     <>
       <Header />
