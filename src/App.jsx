@@ -32,10 +32,10 @@ function App() {
     <main className='container mx-auto p-4 lg:p-10'>
       <div className='flex flex-col lg:flex-row gap-2 items-center mb-4'>
         <section className='basis-full flex flex-col'>
-          <h1 className='font-bold text-4xl stretch-125'>
+          <h1 className='font-bold text-4xl stretch-125 text-slate-50'>
             talk2human
           </h1>
-          <p className='text-md break-all'>
+          <p className='text-md break-all text-slate-300'>
             easily reach real customer service agents and save time.
             find customer care numbers and bypass endless hotline
             menus with ease

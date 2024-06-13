@@ -5,12 +5,12 @@ import { TbArrowNarrowRight } from "react-icons/tb"
 export const Card = (props) => {
   const { data } = props
   return (
-    <section className='p-4 flex flex-col shadow-lg rounded-lg bg-emerald-600 text-zinc-100 font-medium'>
+    <section className='p-4 flex flex-col shadow-lg rounded-lg bg-slate-800 text-slate-50 font-medium'>
       <div className='flex items-center'>
         <img
           className='w-16 h-16 rounded-full mr-2 bg-stone-50'
           src={data.logo}
-          alt='Rounded avatar'
+          alt='Rounded logo'
         />
         <span className='font-bold text-lg stretch-90'>
           {data.name}
@@ -20,7 +20,7 @@ export const Card = (props) => {
         <BiPhone style={{ display: "inline" }} />
         <a
           href={`tel:${data.phone_primary}`}
-          className='pl-2 font-mono'
+          className='pl-2 font-mono text-slate-200'
         >
           {data.phone_primary}
         </a>
@@ -29,20 +29,20 @@ export const Card = (props) => {
         <BiPhone style={{ display: "inline" }} />
         <a
           href={`tel:${data.phone_secondary}`}
-          className='pl-2 font-mono font-medium'
+          className='pl-2 font-mono font-medium text-slate-200'
         >
           {data.phone_secondary}
         </a>
       </div>
 
-      <div className='border-t border-zinc-100 pt-2 mt-2'>
+      <div className='border-t border-slate-500 pt-2 mt-2'>
         <span className='stretch-90'>reach human:</span>
         {data.human_code.map((number, index) => {
           return (
             <span key={index}>
               <span
                 key={index}
-                className='p-1 px-2 m-1 rounded-lg font-mono font-semibold bg-zinc-100 text-zinc-900'
+                className='p-1 px-2 m-1 rounded-lg font-mono font-semibold bg-slate-100 text-slate-900'
               >
                 {number}
               </span>

@@ -3,18 +3,18 @@ import PropTypes from "prop-types"
 export const SearchContainer = (props) => {
   const { searchTerm, setSearchTerm } = props
   return (
-    <section className='mb-4 w-full'>
+    <section className='mb-4 w-full shadow-lg'>
       <form className=''>
         <label
           htmlFor='default-search'
-          className='mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white'
+          className='mb-2 text-sm font-medium text-slate-900 sr-only'
         >
           Search
         </label>
         <div className='relative'>
           <div className='absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none'>
             <svg
-              className='w-4 h-4 text-gray-500 dark:text-gray-400'
+              className='w-4 h-4 text-slate-500'
               aria-hidden='true'
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -32,7 +32,7 @@ export const SearchContainer = (props) => {
           <input
             type='search'
             id='default-search'
-            className='block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none'
+            className='block w-full p-4 ps-10 text-sm text-slate-900 border border-slate-300 rounded-lg bg-slate-200 focus:outline-none'
             placeholder='Search Names, Categories...'
             onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}
