@@ -5,6 +5,7 @@ import { data } from "./data/data"
 import { useEffect } from "react"
 import Fuse from "fuse.js"
 import { Footer } from "./components/Footer"
+import { Header } from "./components/Header"
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -29,8 +30,11 @@ function App() {
   console.log("items: ", items)
 
   return (
-    <main className='container mx-auto p-4 lg:p-10'>
-      <div className='flex flex-col lg:flex-row gap-2 items-center mb-4'>
+    <>
+      <Header />
+
+      <main className='container mx-auto p-4 lg:p-10'>
+        {/* <div className='flex flex-col lg:flex-row gap-2 items-center mb-4'>
         <section className='basis-full flex flex-col'>
           <h1 className='font-bold text-4xl stretch-125 text-slate-50'>
             talk2human
@@ -45,10 +49,16 @@ function App() {
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
         />
-      </div>
-      <CardContainer data={items} />
-      <Footer />
-    </main>
+      </div> */}
+        <SearchContainer
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+        />
+
+        <CardContainer data={items} />
+      </main>
+      {/* <Footer /> */}
+    </>
   )
 }
 

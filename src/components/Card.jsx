@@ -8,7 +8,7 @@ export const Card = (props) => {
     <section className='p-4 flex flex-col shadow-lg rounded-lg bg-slate-800 text-slate-50 font-medium'>
       <div className='flex items-center'>
         <img
-          className='w-16 h-16 rounded-full mr-2 bg-stone-50'
+          className='w-12 h-12 rounded-lg mr-2 bg-stone-50'
           src={data.logo}
           alt='Rounded logo'
         />

@@ -33,7 +33,7 @@ export const SearchContainer = (props) => {
             type='search'
             id='default-search'
             className='block w-full p-4 ps-10 text-sm text-slate-900 border border-slate-300 rounded-lg bg-slate-200 focus:outline-none'
-            placeholder='Search Names, Categories...'
+            placeholder='search Names, categories...'
             onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}
             required
