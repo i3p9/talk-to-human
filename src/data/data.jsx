@@ -10,6 +10,7 @@ import BRACLogo from "../assets/logos/brac_bank.png"
 import IslamiBankLogo from "../assets/logos/islami_bank.png"
 import SonaliBankLogo from "../assets/logos/sonali_bank.png"
 import DutchBanglaLogo from "../assets/logos/dutch_bangla_bank.png"
+import { dynamicSort } from "../utils/utils"
 
 export const data = [
   {
@@ -195,3 +196,5 @@ export const data = [
   //   verified: false,
   // },
 ]
+
+export const sortedData = data.sort(dynamicSort("id"))

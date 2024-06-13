@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { CardContainer } from "./components/CardContainer"
 import { SearchContainer } from "./components/SearchContainer"
-import { data } from "./data/data"
+import { data, sortedData } from "./data/data"
 import { useEffect } from "react"
 import Fuse from "fuse.js"
 // import { Footer } from "./components/Footer"
@@ -9,7 +9,7 @@ import { Header } from "./components/Header"
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
-  const [items, setItems] = useState(data)
+  const [items, setItems] = useState(sortedData)
   const fuse = new Fuse(data, {
     keys: ["name", "category"],
     includeScore: true,

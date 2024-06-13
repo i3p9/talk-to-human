@@ -2,6 +2,9 @@ import { useState } from "react"
 import { BiPhone } from "react-icons/bi"
 import PropTypes from "prop-types"
 import { TbArrowNarrowRight } from "react-icons/tb"
+// import { extractColors } from "extract-colors"
+import { useEffect } from "react"
+import { getImageColorsInHex } from "../utils/utils"
 
 export const Card = (props) => {
   const { data } = props
@@ -11,6 +14,18 @@ export const Card = (props) => {
     x: 50,
     y: 50,
   })
+
+  //   function getGradientDirection(x, y) {
+  //     if (x > 50 && y > 50) return "to bottom right"
+  //     if (x > 50 && y < 50) return "to top right"
+  //     if (x < 50 && y > 50) return "to bottom left"
+  //     return "to top left"
+  //   }
+
+  //   const gradientDirection = getGradientDirection(
+  //     gradientPosition.x,
+  //     gradientPosition.y
+  //   )
 
   const handleMouseMove = (e) => {
     const section = e.currentTarget
@@ -22,6 +37,35 @@ export const Card = (props) => {
   }
   const handleMouseEnter = () => setIsHovered(true)
   const handleMouseLeave = () => setIsHovered(false)
+
+  const [imageColors, setImageColors] = useState([])
+
+  //   useEffect(() => {
+  //     extractColors(data.logo)
+  //       .then((res) => {
+  //         let colors = []
+  //         res.map((color) => {
+  //           colors.push(color.hex)
+  //         })
+  //         setImageColors(colors)
+  //       })
+  //       .catch(console.error)
+  //   }, [])
+
+  useEffect(() => {
+    if (imageColors.length === 0) {
+      getImageColorsInHex(data.logo)
+        .then((colors) => {
+          //   console.log(colors) // array of hex colors
+          setImageColors(colors)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    }
+  }, [data.logo])
+
+  console.log("image colors: ", imageColors)
 
   return (
     <section
@@ -40,6 +84,16 @@ export const Card = (props) => {
             ? `radial-gradient(circle at ${gradientPosition.x}% ${gradientPosition.y}%, #0F172A, #334155)`
             : "none",
         }}
+        // style={{
+        //   backgroundImage: isHovered
+        //     ? `radial-gradient(circle at ${gradientPosition.x}% ${gradientPosition.y}%, ${imageColors[0]}, ${imageColors[1]})`
+        //     : "none",
+        // }}
+        // style={{
+        //   backgroundImage: isHovered
+        //     ? `linear-gradient(${gradientDirection}, ${data.color_scheme[0]}, ${data.color_scheme[1]}, ${data.color_scheme[2]})`
+        //     : "none",
+        // }}
       ></div>
       <div className='relative'>
         <div className='flex items-center'>
