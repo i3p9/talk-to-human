@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
     <nav className='px-4 lg:px-24 py-4 border-b-2 border-slate-500 flex flex-row justify-between items-center'>
-      <h1 className='font-bold text-2xl lg:text-4xl stretch-125 text-slate-50'>
+      <h1 className='font-bold text-2xl lg:text-4xl stretch-125 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-500 inline-block text-transparent bg-clip-text'>
         talk2human
       </h1>
       <section className='flex gap-2'>

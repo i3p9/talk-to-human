@@ -14,7 +14,7 @@ export const SearchContainer = (props) => {
         <div className='relative'>
           <div className='absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none'>
             <svg
-              className='w-4 h-4 text-slate-500'
+              className='w-4 h-4 text-slate-100'
               aria-hidden='true'
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -32,8 +32,8 @@ export const SearchContainer = (props) => {
           <input
             type='search'
             id='default-search'
-            className='block w-full p-4 ps-10 text-sm text-slate-900 border border-slate-300 rounded-lg bg-slate-200 focus:outline-none'
-            placeholder='search Names, categories...'
+            className='block w-full p-2 ps-10 text-sm text-slate-50 border border-slate-500 rounded-lg bg-slate-800 focus:outline-none'
+            placeholder='search for names, categories...'
             onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}
             required
