@@ -2,9 +2,8 @@ import { useState } from "react"
 import { BiPhone } from "react-icons/bi"
 import PropTypes from "prop-types"
 import { TbArrowNarrowRight } from "react-icons/tb"
-// import { extractColors } from "extract-colors"
-import { useEffect } from "react"
-import { getImageColorsInHex } from "../utils/utils"
+// import { useEffect } from "react"
+// import { getImageColorsInHex } from "../utils/utils"
 
 export const Card = (props) => {
   const { data } = props
@@ -38,34 +37,23 @@ export const Card = (props) => {
   const handleMouseEnter = () => setIsHovered(true)
   const handleMouseLeave = () => setIsHovered(false)
 
-  const [imageColors, setImageColors] = useState([])
+  // on hover -- use image colors from extractImageColors
+  // const [imageColors, setImageColors] = useState([])
 
-  //   useEffect(() => {
-  //     extractColors(data.logo)
-  //       .then((res) => {
-  //         let colors = []
-  //         res.map((color) => {
-  //           colors.push(color.hex)
-  //         })
+  // useEffect(() => {
+  //   if (imageColors.length === 0) {
+  //     getImageColorsInHex(data.logo)
+  //       .then((colors) => {
+  //         //   console.log(colors) // array of hex colors
   //         setImageColors(colors)
   //       })
-  //       .catch(console.error)
-  //   }, [])
+  //       .catch((error) => {
+  //         console.error(error)
+  //       })
+  //   }
+  // }, [data.logo])
 
-  useEffect(() => {
-    if (imageColors.length === 0) {
-      getImageColorsInHex(data.logo)
-        .then((colors) => {
-          //   console.log(colors) // array of hex colors
-          setImageColors(colors)
-        })
-        .catch((error) => {
-          console.error(error)
-        })
-    }
-  }, [data.logo])
-
-  console.log("image colors: ", imageColors)
+  // console.log("image colors: ", imageColors)
 
   return (
     <section
@@ -98,9 +86,10 @@ export const Card = (props) => {
       <div className='relative'>
         <div className='flex items-center'>
           <img
-            className='w-12 h-12 rounded-lg mr-2 bg-stone-50'
+            loading='lazy'
+            className={`w-12 h-12 rounded-lg mr-2 bg-stone-50`}
             src={data.logo}
-            alt='Rounded logo'
+            alt={`logo of ${data.name}`}
           />
           <span className='font-bold text-lg stretch-90'>
             {data.name}

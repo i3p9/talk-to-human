@@ -1,15 +1,15 @@
-import UCBLogo from "../assets/logos/ucb_bank.png"
-import EBLLogo from "../assets/logos/ebl_bank.png"
-import UPayLogo from "../assets/logos/upay_wallet.png"
-import BkashLogo from "../assets/logos/bkash_wallet.png"
-import CityBankLogo from "../assets/logos/city_bank.png"
-import ABBankLogo from "../assets/logos/ab_bank.png"
-import MTBLogo from "../assets/logos/mtb_bank.png"
-import NagadLogo from "../assets/logos/nagad_wallet.png"
-import BRACLogo from "../assets/logos/brac_bank.png"
-import IslamiBankLogo from "../assets/logos/islami_bank.png"
-import SonaliBankLogo from "../assets/logos/sonali_bank.png"
-import DutchBanglaLogo from "../assets/logos/dutch_bangla_bank.png"
+import UCBLogo from "../assets/logos/sm/ucb_bank.png"
+import EBLLogo from "../assets/logos/sm/ebl_bank.png"
+import UPayLogo from "../assets/logos/sm/upay_wallet.png"
+import BkashLogo from "../assets/logos/sm/bkash_wallet.png"
+import CityBankLogo from "../assets/logos/sm/city_bank.png"
+import ABBankLogo from "../assets/logos/sm/ab_bank.png"
+import MTBLogo from "../assets/logos/sm/mtb_bank.png"
+import NagadLogo from "../assets/logos/sm/nagad_wallet.png"
+import BRACLogo from "../assets/logos/sm/brac_bank.png"
+import IslamiBankLogo from "../assets/logos/sm/islami_bank.png"
+import SonaliBankLogo from "../assets/logos/sm/sonali_bank.png"
+import DutchBanglaLogo from "../assets/logos/sm/dutch_bangla_bank.png"
 import { dynamicSort } from "../utils/utils"
 
 export const data = [
@@ -18,12 +18,12 @@ export const data = [
     id: "ucb_bank",
     category: "bank",
     phone_primary: "16419",
-    phone_secondary: "+880910016419",
+    phone_secondary: "0910016419",
     email: "complaint@ucb.com.bd",
     url: "https://www.ucb.com.bd",
     logo: UCBLogo,
     human_code: ["1", "9"],
-    color_scheme: ["#D33732", "#404041", "#404041"],
+    color_scheme: ["#404041", "#D33732", "#404041"],
     verified: true,
   },
   {
@@ -31,7 +31,7 @@ export const data = [
     id: "upay_wallet",
     category: "wallet",
     phone_primary: "16268",
-    phone_secondary: "",
+    phone_secondary: "09610916268",
     email: "info@upaybd.com",
     url: "https://www.upaybd.com",
     logo: UPayLogo,
@@ -44,7 +44,7 @@ export const data = [
     id: "ebl_bank",
     category: "bank",
     phone_primary: "16230",
-    phone_secondary: "+8809612316230",
+    phone_secondary: "09612316230",
     email: "info@ebl-bd.com",
     url: "https://www.ebl.com.bd",
     logo: EBLLogo,
@@ -71,7 +71,7 @@ export const data = [
     id: "city_bank",
     category: "bank",
     phone_primary: "16234",
-    phone_secondary: "+88028331040",
+    phone_secondary: "028331040",
     email: "complaint.cell@thecitybank.com",
     url: "https://www.citybankplc.com",
     logo: CityBankLogo,
@@ -85,7 +85,7 @@ export const data = [
     id: "ab_bank",
     category: "bank",
     phone_primary: "16207",
-    phone_secondary: "+8809678916207",
+    phone_secondary: "09678916207",
     email: "support@abbl.com",
     url: "https://abbl.com",
     logo: ABBankLogo,
@@ -99,7 +99,7 @@ export const data = [
     id: "mtb_bank",
     category: "bank",
     phone_primary: "16219",
-    phone_secondary: "+8809604016219",
+    phone_secondary: "09604016219",
     email: "info@mutualtrustbank.com",
     url: "https://www.mutualtrustbank.com",
     logo: MTBLogo,
@@ -113,7 +113,7 @@ export const data = [
     id: "nagad_wallet",
     category: "wallet",
     phone_primary: "16167",
-    phone_secondary: "+8809609616167",
+    phone_secondary: "09609616167",
     email: "info@nagad.com.bd",
     url: "https://nagad.com.bd",
     logo: NagadLogo,
@@ -127,11 +127,11 @@ export const data = [
     id: "brac_bank",
     category: "bank",
     phone_primary: "16221",
-    phone_secondary: "+880255668055",
+    phone_secondary: "0255668055",
     additional: {
       phone_toll_free: "08000016221",
-      phone_overseas: "+880255668055",
-      phone_overseas_2: "+8809611223344",
+      phone_overseas: "0255668055",
+      phone_overseas_2: "09611223344",
     },
     email: "enquiry@bracbank.com",
     url: "https://www.bracbank.com",
@@ -146,7 +146,7 @@ export const data = [
     id: "islami_bank",
     category: "bank",
     phone_primary: "16259",
-    phone_secondary: "+88028331090",
+    phone_secondary: "028331090",
     email: "info@islamibankbd.com",
     url: "https://www.islamibankbd.com",
     logo: IslamiBankLogo,
@@ -159,7 +159,7 @@ export const data = [
     id: "sonali_bank",
     category: "bank",
     phone_primary: "16639",
-    phone_secondary: "+8809610016639",
+    phone_secondary: "09610016639",
     email: "support@sonalibank.com.bd",
     url: "https://www.sonalibank.com.bd",
     logo: SonaliBankLogo,
@@ -172,7 +172,7 @@ export const data = [
     id: "dutch_bangla_bank",
     category: "bank",
     phone_primary: "16216",
-    phone_secondary: "+8809666716216",
+    phone_secondary: "09666716216",
     email: "cards@dutchbanglabank.com",
     url: "https://www.dutchbanglabank.com",
     additional: {
