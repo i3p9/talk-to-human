@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { BiPhone } from "react-icons/bi"
+import { BiPhone, BiMailSend } from "react-icons/bi"
 import PropTypes from "prop-types"
 import { TbArrowNarrowRight } from "react-icons/tb"
 // import { useEffect } from "react"
@@ -117,11 +117,20 @@ export const Card = (props) => {
             {data.phone_secondary ? data.phone_secondary : "n/a"}
           </a>
         </div>
+        <div>
+          <BiMailSend style={{ display: "inline" }} />
+          <a
+            href={`mailto:${data.email}`}
+            className='pl-2 font-mono text-slate-200 hover:underline'
+          >
+            {data.email ? data.email : "n/a"}
+          </a>
+        </div>
         <div className='border-t border-slate-500 pt-2 mt-2'>
           <span className='stretch-90'>reach human:</span>
           {data.human_code.map((number, index) => (
             <span key={index}>
-              <span className='p-1 px-2 m-1 rounded-lg font-mono font-semibold bg-slate-100 text-slate-900'>
+              <span className='p-1 px-2 m-1 rounded-lg font-mono font-semibold bg-slate-800 text-slate-100 border border-slate-500'>
                 {number}
               </span>
               {data.human_code.length - 1 !== index && (
