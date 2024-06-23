@@ -10,6 +10,7 @@ import BRACLogo from "../assets/logos/sm/brac_bank.png"
 import IslamiBankLogo from "../assets/logos/sm/islami_bank.png"
 import SonaliBankLogo from "../assets/logos/sm/sonali_bank.png"
 import DutchBanglaLogo from "../assets/logos/sm/dutch_bangla_bank.png"
+import HaierBangladesh from "../assets/logos/sm/haier_bd.png"
 import { dynamicSort } from "../utils/utils"
 
 export const data = [
@@ -18,7 +19,7 @@ export const data = [
     id: "ucb_bank",
     category: "bank",
     phone_primary: "16419",
-    phone_secondary: "0910016419",
+    phone_secondary: "+8809610016419",
     email: "complaint@ucb.com.bd",
     url: "https://www.ucb.com.bd",
     logo: UCBLogo,
@@ -183,6 +184,18 @@ export const data = [
     color_scheme: ["#2F318D", "#DA3832", "#43924D"],
     verified: false,
   },
+  {
+    name: "Haier Bangladesh",
+    category: "appliences",
+    phone_primary: "16678",
+    phone_secondary: "09666880099",
+    email: "bd.info@haier.com.bd",
+    url: "https://haier.com/bd",
+    logo: HaierBangladesh,
+    human_code: ["1"],
+    verified: false,
+  },
+
   // {
   //   //do not touch, copy and paste above
   //   name: "",
