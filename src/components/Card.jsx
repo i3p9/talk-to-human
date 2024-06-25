@@ -2,6 +2,7 @@ import { useState } from "react"
 import { BiPhone, BiMailSend } from "react-icons/bi"
 import PropTypes from "prop-types"
 import { TbArrowNarrowRight } from "react-icons/tb"
+import { StyledTextInfo } from "./StyledTextInfo"
 // import { useEffect } from "react"
 // import { getImageColorsInHex } from "../utils/utils"
 
@@ -60,7 +61,8 @@ export const Card = (props) => {
       className={`relative transition-all ease-in-out delay-10
       hover:-translate-y-0.5 hover:scale-102 duration-500 p-4 flex
       flex-col shadow-lg rounded-lg bg-slate-800 text-slate-50 font-medium
-      overflow-hidden border border-slate-500`}
+      overflow-hidden border border-slate-500 hover:border-slate-300
+      hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_3px_#64748B,0_0_9px_#64748B,0_0_15px_#64748B]`}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -95,37 +97,26 @@ export const Card = (props) => {
             {data.name}
           </span>
         </div>
-        <div className='mt-2'>
-          <BiPhone style={{ display: "inline" }} />
-          <a
-            href={`tel:${data.phone_primary}`}
-            className='pl-2 font-mono text-slate-200 hover:underline'
-          >
-            {data.phone_primary}
-          </a>
-        </div>
-        <div>
-          <BiPhone style={{ display: "inline" }} />
-          <a
-            href={
-              data.phone_secondary && `tel:${data.phone_secondary}`
-            }
-            className={`pl-2 font-mono font-medium text-slate-200 ${
-              data.phone_secondary ? "hover:underline" : ""
-            }`}
-          >
-            {data.phone_secondary ? data.phone_secondary : "n/a"}
-          </a>
-        </div>
-        <div>
-          <BiMailSend style={{ display: "inline" }} />
-          <a
-            href={`mailto:${data.email}`}
-            className='pl-2 font-mono text-slate-200 hover:underline'
-          >
-            {data.email ? data.email : "n/a"}
-          </a>
-        </div>
+        <StyledTextInfo
+          type={"phone"}
+          data={data.phone_primary}
+          prependIcon={<BiPhone />}
+          canCopy={true}
+          className={"mt-2"}
+        />
+        <StyledTextInfo
+          type={"phone"}
+          data={data.phone_secondary}
+          prependIcon={<BiPhone />}
+          canCopy={true}
+        />
+        <StyledTextInfo
+          type={"email"}
+          data={data.email}
+          prependIcon={<BiMailSend />}
+          canCopy={true}
+        />
+
         <div className='border-t border-slate-500 pt-2 mt-2'>
           <span className='stretch-90'>reach human:</span>
           {data.human_code.map((number, index) => (
