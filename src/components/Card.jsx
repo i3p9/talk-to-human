@@ -4,11 +4,14 @@ import PropTypes from "prop-types"
 import { TbArrowNarrowRight } from "react-icons/tb"
 import { StyledTextInfo } from "./StyledTextInfo"
 import { WaitTImeBlock } from "./molecules/WaitTimeBlock"
+import { PiStar } from "react-icons/pi"
+import { PiStarFill } from "react-icons/pi"
+
 // import { useEffect } from "react"
 // import { getImageColorsInHex } from "../utils/utils"
 
 export const Card = (props) => {
-  const { data } = props
+  const { data, favorites, setFavorites } = props
 
   const [isHovered, setIsHovered] = useState(false)
   const [gradientPosition, setGradientPosition] = useState({
@@ -57,13 +60,26 @@ export const Card = (props) => {
 
   // console.log("image colors: ", imageColors)
 
+  const handleAddItemToFavorites = (id) => {
+    if (!favorites.includes(id)) {
+      const newFavs = [...favorites, id]
+      setFavorites(newFavs)
+      localStorage.setItem("favorites", JSON.stringify(newFavs))
+    } else {
+      const newFavs = favorites.filter((favId) => favId !== id)
+      setFavorites(newFavs)
+      localStorage.setItem("favorites", JSON.stringify(newFavs))
+    }
+  }
+
   return (
     <section
-      className={`relative transition-all ease-in-out delay-10
+      className={`card relative transition-all ease-in-out delay-10
       hover:-translate-y-0.5 hover:scale-102 duration-500 p-4 flex
       flex-col shadow-lg rounded-lg bg-slate-800 text-slate-50 font-medium
       overflow-hidden border border-slate-500 hover:border-slate-300
       hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_3px_#64748B,0_0_9px_#64748B,0_0_15px_#64748B]`}
+      // transition-all duration-1000 ease-in-out transform`}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -87,17 +103,38 @@ export const Card = (props) => {
         // }}
       ></div>
       <div className='relative'>
-        <div className='flex items-center'>
-          <img
-            loading='lazy'
-            className={`w-12 h-12 rounded-lg mr-2 bg-stone-50`}
-            src={data.logo}
-            alt={`logo of ${data.name}`}
-          />
-          <span className='font-bold text-lg stretch-90'>
-            {data.name}
-          </span>
+        <div className='flex justify-between'>
+          <div className='flex items-center'>
+            <img
+              loading='lazy'
+              className={`w-12 h-12 rounded-lg mr-2 bg-stone-50`}
+              src={data.logo}
+              alt={`logo of ${data.name}`}
+            />
+            <span className='font-bold text-lg stretch-90'>
+              {data.name}
+            </span>
+          </div>
+          <div>
+            <button onClick={() => handleAddItemToFavorites(data.id)}>
+              {favorites.includes(data.id) ? (
+                <PiStarFill
+                  className='inline transition hover:scale-110'
+                  color='gold'
+                  title='remove from favorites'
+                  size={25}
+                />
+              ) : (
+                <PiStar
+                  className='inline transition hover:scale-110'
+                  title='add to favorites'
+                  size={25}
+                />
+              )}
+            </button>
+          </div>
         </div>
+
         <StyledTextInfo
           type={"phone"}
           data={data.phone_primary}
@@ -143,4 +180,6 @@ export const Card = (props) => {
 
 Card.propTypes = {
   data: PropTypes.any,
+  favorites: PropTypes.array,
+  setFavorites: PropTypes.func,
 }

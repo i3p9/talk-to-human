@@ -45,3 +45,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.grid {
+  transition: height 0.5s ease-in-out;
+}
+
+.card {
+  transition: all 0.5s ease-in-out;
+}

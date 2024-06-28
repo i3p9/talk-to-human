@@ -10,6 +10,12 @@ import { Header } from "./components/Header"
 function App() {
   const [searchTerm, setSearchTerm] = useState("")
   const [items, setItems] = useState(sortedData)
+  const [favorites, setFavorites] = useState(
+    JSON.parse(localStorage.getItem("favorites"))
+      ? JSON.parse(localStorage.getItem("favorites"))
+      : []
+  )
+
   const fuse = new Fuse(data, {
     keys: ["name", "category"],
     includeScore: true,
@@ -53,7 +59,11 @@ function App() {
           setSearchTerm={setSearchTerm}
         />
 
-        <CardContainer data={items} />
+        <CardContainer
+          data={items}
+          favorites={favorites}
+          setFavorites={setFavorites}
+        />
       </main>
       {/* <Footer /> */}
     </>
