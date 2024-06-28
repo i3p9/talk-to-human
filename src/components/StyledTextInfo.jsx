@@ -106,7 +106,7 @@ StyledTextInfo.propTypes = {
   type: PropTypes.string,
 }
 
-StyledTextInfo.defaultProps = {
+StyledTextInfo.default = {
   canCopy: false,
   copyIcon: <LuCopy />,
   className: "",

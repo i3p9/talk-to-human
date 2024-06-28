@@ -3,6 +3,7 @@ import { BiPhone, BiMailSend } from "react-icons/bi"
 import PropTypes from "prop-types"
 import { TbArrowNarrowRight } from "react-icons/tb"
 import { StyledTextInfo } from "./StyledTextInfo"
+import { WaitTImeBlock } from "./molecules/WaitTimeBlock"
 // import { useEffect } from "react"
 // import { getImageColorsInHex } from "../utils/utils"
 
@@ -119,7 +120,12 @@ export const Card = (props) => {
 
         <div className='border-t border-slate-500 pt-2 mt-2'>
           <span className='stretch-90'>reach human:</span>
-          {data.human_code.map((number, index) => (
+          {data?.waiting_time_before_input && (
+            <WaitTImeBlock
+              duration={data.waiting_time_before_input}
+            />
+          )}
+          {data?.human_code.map((number, index) => (
             <span key={index}>
               <span className='p-1 px-2 m-1 rounded-lg font-mono font-semibold bg-slate-800 text-slate-100 border border-slate-500'>
                 {number}
