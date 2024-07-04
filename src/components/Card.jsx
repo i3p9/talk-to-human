@@ -159,6 +159,7 @@ export const Card = (props) => {
 						data={data.email}
 						prependIcon={<BiMailSend />}
 						canCopy={true}
+						category={data.category}
 						onClick={() => {
 							if (data.category === "bank") {
 								setModalOpen((prevState) => {

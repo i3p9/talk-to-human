@@ -11,6 +11,7 @@ export const StyledTextInfo = ({
 	className = "",
 	type,
 	onClick,
+	category,
 }) => {
 	const [showCopied, setShowCopied] = useState(false);
 
@@ -43,14 +44,23 @@ export const StyledTextInfo = ({
 					</p>
 				);
 			case "phone":
-				return (
-					<a
-						href={`tel:${data}`}
-						className='pl-2 font-mono text-slate-200 hover:underline'
-					>
-						{data ? data : "N/A"}
-					</a>
-				);
+				if (category === "bank") {
+					console.log("category is bank, so no href");
+					return (
+						<p className='pl-2 font-mono text-slate-200 hover:underline'>
+							{data ? data : "N/A"}
+						</p>
+					);
+				} else {
+					return (
+						<a
+							href={`tel:${data}`}
+							className='pl-2 font-mono text-slate-200 hover:underline'
+						>
+							{data ? data : "N/A"}
+						</a>
+					);
+				}
 			case "email":
 				return (
 					<a
@@ -107,6 +117,7 @@ StyledTextInfo.propTypes = {
 	className: PropTypes.string,
 	type: PropTypes.string,
 	onClick: PropTypes.func,
+	category: PropTypes.string,
 };
 
 StyledTextInfo.default = {

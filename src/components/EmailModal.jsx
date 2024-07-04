@@ -22,7 +22,7 @@ const EmailModal = ({ modalOpen, setModalOpen, email }) => {
 			onClick={closeModal}
 		>
 			<div
-				className='modal-content w-[90%] md:w-[50%] shadow-lg rounded-lg bg-slate-800 text-slate-50 p-5 md:p-10'
+				className='modal-content w-[90%] md:w-[50%] shadow-lg rounded-lg bg-slate-800 text-slate-50 p-5 md:p-8'
 				onClick={stopPropagation}
 			>
 				<div className='flex justify-between border-b border-slate-500'>
@@ -34,14 +34,16 @@ const EmailModal = ({ modalOpen, setModalOpen, email }) => {
 					/>
 				</div>
 
-				<p className='py-2 text-lg text-pretty'>
+				<p className='py-2 text-md text-pretty'>
 					Would you like to include the{" "}
 					<span className='italic'>
 						Bangladesh Bank Complaints Email
 					</span>{" "}
-					in the cc field? Including this address often leads to
-					improved responsiveness from the bank when filing a
-					complaint.
+					in the cc field?{" "}
+					<p>
+						Including this address often leads to improved
+						responsiveness from the bank when filing a complaint.
+					</p>
 					<p className='p-1 text-md'>
 						Bangladesh Bank Complaint Hotline:{" "}
 						<StyledTextInfo
