@@ -56,12 +56,14 @@ const EmailModal = ({ modalOpen, setModalOpen, email }) => {
 				<div className='flex flex-row-reverse'>
 					<Button
 						type={"primary"}
-						text={"No, don't cc"}
+						text={"No"}
+						textLong={"No, don't cc"}
 						email={email}
 					/>
 					<Button
 						type={"secondary"}
-						text={"Yes, add them to cc"}
+						text={"Yes"}
+						textLong={"Yes, add them to cc"}
 						email={email}
 					/>
 				</div>

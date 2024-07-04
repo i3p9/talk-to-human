@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const Button = ({ type, text, email }) => {
+const Button = ({ type, text, textLong, email }) => {
 	if (type === "primary") {
 		return (
 			<>
@@ -10,7 +10,14 @@ const Button = ({ type, text, email }) => {
                 hover:bg-slate-700 hover:text-slate-300 hover:border hover:border-slate-300
                 transition-all duration-300 ease-in-out'
 					>
-						{text}
+						{textLong ? (
+							<>
+								<span className='hidden md:block'>{textLong}</span>
+								<span className='block md:hidden'>{text}</span>
+							</>
+						) : (
+							text
+						)}
 					</button>
 				</a>
 			</>
@@ -27,7 +34,14 @@ const Button = ({ type, text, email }) => {
                 hover:bg-slate-600 hover:text-slate-300 hover:border hover:border-slate-300
                 transition-all duration-300 ease-in-out'
 					>
-						{text}
+						{textLong ? (
+							<>
+								<span className='hidden md:block'>{textLong}</span>
+								<span className='block md:hidden'>{text}</span>
+							</>
+						) : (
+							text
+						)}
 					</button>
 				</a>
 			</>
@@ -36,7 +50,14 @@ const Button = ({ type, text, email }) => {
 		return (
 			<>
 				<button className='font-medium bg-slate-300 text-slate-900 p-2 px-6 shadow-lg rounded-lg m-1'>
-					{text}
+					{textLong ? (
+						<>
+							<span className='hidden md:block'>{textLong}</span>
+							<span className='block md:hidden'>{text}</span>
+						</>
+					) : (
+						text
+					)}
 				</button>
 			</>
 		);
@@ -46,6 +67,7 @@ const Button = ({ type, text, email }) => {
 Button.propTypes = {
 	type: PropTypes.string,
 	text: PropTypes.string,
+	textLong: PropTypes.string,
 	email: PropTypes.string,
 };
 
