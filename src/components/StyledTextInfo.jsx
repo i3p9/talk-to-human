@@ -44,33 +44,34 @@ export const StyledTextInfo = ({
 					</p>
 				);
 			case "phone":
+				return (
+					<a
+						href={`tel:${data}`}
+						className='pl-2 font-mono text-slate-200 hover:underline'
+					>
+						{data ? data : "N/A"}
+					</a>
+				);
+			case "email":
 				if (category === "bank") {
-					console.log("category is bank, so no href");
 					return (
-						<p className='pl-2 font-mono text-slate-200 hover:underline'>
+						<p
+							className='pl-2 font-mono text-slate-200 hover:underline cursor-pointer'
+							onClick={() => onClick()}
+						>
 							{data ? data : "N/A"}
 						</p>
 					);
 				} else {
 					return (
 						<a
-							href={`tel:${data}`}
+							href={`mailto:${data}`}
 							className='pl-2 font-mono text-slate-200 hover:underline'
 						>
 							{data ? data : "N/A"}
 						</a>
 					);
 				}
-			case "email":
-				return (
-					<a
-						href={`mailto:${data}`}
-						onClick={() => onClick()}
-						className='pl-2 font-mono text-slate-200 hover:underline'
-					>
-						{data ? data : "N/A"}
-					</a>
-				);
 			default:
 				return (
 					<p className='pl-2 font-mono text-slate-200 hover:underline'>
