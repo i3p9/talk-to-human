@@ -21,7 +21,5 @@
     "lang": "en-US",
     "name": "talk2human",
     "short_name": "talk2human",
-    "start_url": "https://talk2human.vercel.app",
-    "scope": "https://talk2human.vercel.app/",
     "description": "fastest way to find real person on customer hotlines"
 }
